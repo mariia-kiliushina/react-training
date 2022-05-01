@@ -12,8 +12,4 @@ const Index: FC = () => {
   return <App />;
 };
 
-const tick = () => {
-  setInterval(() => root.render(<Index />), 1000);
-};
-
-tick();
+root.render(<Index />);

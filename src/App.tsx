@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 
 // type User = {
 //   firstName: string;
@@ -76,19 +76,24 @@ import { FC } from "react";
 
 import s from "./App.module.css";
 
-type Props = {
+type Props = {};
+type State = {
   time: string;
 };
+class Clock extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      time: new Date().toLocaleTimeString(),
+    };
+  }
+  render() {
+    return <h2 className={s.Heh}>It's {this.state.time}</h2>;
+  }
+}
 
-const Clock: FC<Props> = (props) => {
-  return <h2 className={s.Heh}>It's + {props.time}</h2>;
-};
-
-const Tick = () => {
-  return <Clock time={new Date().toLocaleTimeString()} />;
-};
 const App: FC = () => {
-  return <Tick />;
+  return <Clock />;
 };
 
 export default App;
