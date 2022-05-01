@@ -7,13 +7,13 @@ module.exports = {
     port: 3002,
   },
   devtool: "source-map",
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   mode: process.env.MODE,
   module: {
     rules: [
       {
         exclude: /node_modules/,
-        test: /\.js(x?)$/,
+        test: /\.ts(x?)$/,
         use: ["babel-loader"],
       },
     ],
