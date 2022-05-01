@@ -34,6 +34,9 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "public/index.html",
     }),
+    new webpack.ProvidePlugin({
+      React: "react",
+    }),
   ],
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],

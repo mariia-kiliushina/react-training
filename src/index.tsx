@@ -1,10 +1,19 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.querySelector("#root"));
+import App from "./App";
 
-const Hellower: FC = () => {
-  return <h1>Hello, world 234</h1>;
+const rootElement =
+  document.querySelector("#root") || document.createElement("div");
+
+const root = ReactDOM.createRoot(rootElement);
+
+const Index: FC = () => {
+  return <App />;
 };
 
-root.render(<Hellower />);
+const tick = () => {
+  setInterval(() => root.render(<Index />), 1000);
+};
+
+tick();
