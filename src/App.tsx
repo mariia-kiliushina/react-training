@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 // type User = {
 //   firstName: string;
@@ -74,12 +74,14 @@ import React, { FC } from "react";
 //   age: 25,
 // };
 
+import s from "./App.module.css";
+
 type Props = {
   time: string;
 };
 
 const Clock: FC<Props> = (props) => {
-  return <h2>It's + {props.time}</h2>;
+  return <h2 className={s.Heh}>It's + {props.time}</h2>;
 };
 
 const Tick = () => {
